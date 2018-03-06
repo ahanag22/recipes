@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace MapView {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -25,6 +28,9 @@ namespace MapView {
 		//
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
+            //AppCenter.Start("4b37d08a-66fd-4136-bc4c-1d99e3c7ee3a",
+                   //typeof(Analytics), typeof(Crashes));
+            AppCenter.Start("4b37d08a-66fd-4136-bc4c-1d99e3c7ee3a", typeof(Analytics), typeof(Crashes));
 			// create a new window instance based on the screen size
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 			
@@ -38,7 +44,9 @@ namespace MapView {
 			
 			// make the window visible
 			window.MakeKeyAndVisible ();
-			
+           #if ENABLE_TEST_CLOUD
+           Xamarin.Calabash.Start();
+           #endif
 			return true;
 		}
 	}
