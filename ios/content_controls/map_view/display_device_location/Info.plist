@@ -20,5 +20,7 @@
 	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app displays your location on a map. </string>
+	<key>CFBundleName</key>
+	<string>MapView</string>
 </dict>
 </plist>

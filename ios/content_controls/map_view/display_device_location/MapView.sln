@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapView", "MapView.csproj", "{9785D147-C90E-47FD-A1A0-CBD233E708BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapViewUITest", "MapViewUITest\MapViewUITest.csproj", "{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -19,6 +21,14 @@ Global
 		{9785D147-C90E-47FD-A1A0-CBD233E708BB}.Release|iPhone.Build.0 = Release|iPhone
 		{9785D147-C90E-47FD-A1A0-CBD233E708BB}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{9785D147-C90E-47FD-A1A0-CBD233E708BB}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FA09ADB7-CE3F-4022-A6BC-64A71CB5ED26}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = MapView.csproj

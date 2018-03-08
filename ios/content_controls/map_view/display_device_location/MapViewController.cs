@@ -1,4 +1,5 @@
 using System;
+using System.Timers;
 using CoreGraphics;
 using CoreLocation;
 using MapKit;
@@ -24,12 +25,15 @@ namespace MapView {
 			//mapView.MapType = MKMapType.Hybrid;
 			View.AddSubview(mapView);
 
-			//Request permission to access device location - necessary on iOS 8.0 and above
-			//Don't forget to set NSLocationWhenInUseUsageDescription in Info.plist
-			locationManager.RequestWhenInUseAuthorization();
-
-			// this is required to show the blue dot indicating user-location
-			mapView.ShowsUserLocation = true;
+            Timer delayTimer = new Timer();
+            delayTimer.Interval = 4000;
+            delayTimer.Elapsed += (object sender, ElapsedEventArgs e) => {
+                delayTimer.Stop();
+                locationManager.RequestWhenInUseAuthorization();
+                // this is required to show the blue dot indicating user-location
+                mapView.ShowsUserLocation = true;
+            };
+            delayTimer.Start();
 			
 			Console.WriteLine ("initial loc:"+mapView.UserLocation.Coordinate.Latitude + "," + mapView.UserLocation.Coordinate.Longitude);
 
@@ -75,7 +79,7 @@ namespace MapView {
 			};
 
 			View.AddSubview(mapTypes);
-
+           
 			
 
 		}
