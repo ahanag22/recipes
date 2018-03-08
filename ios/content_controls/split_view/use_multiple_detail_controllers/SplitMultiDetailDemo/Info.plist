@@ -14,6 +14,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>5.1.1</string>
+	<string>9.0</string>
+	<key>CFBundleName</key>
+	<string>SplitMultiDetaiDemo</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.microsoft.SplitMultiDetaiDemo</string>
 </dict>
 </plist>

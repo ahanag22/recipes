@@ -16,8 +16,12 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.3</string>
+	<string>9.0</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
+	<key>CFBundleDisplayName</key>
+	<string>WebPage</string>
+	<key>CFBundleName</key>
+	<string>WebPage</string>
 </dict>
 </plist>

@@ -11,7 +11,7 @@
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>MinimumOSVersion</key>
-	<string>8.3</string>
+	<string>9.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -19,5 +19,9 @@
 	</array>
 	<key>XSLaunchImageAssets</key>
 	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
+	<key>CFBundleName</key>
+	<string>UIBarButtonImage</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.xamarin.navigation.uibarbuttonimage</string>
 </dict>
 </plist>

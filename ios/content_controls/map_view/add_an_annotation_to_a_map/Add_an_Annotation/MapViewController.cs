@@ -3,6 +3,7 @@ using CoreGraphics;
 using CoreLocation;
 using MapKit;
 using UIKit;
+using Foundation; // if NSObject is required for handling annotation click events
 
 namespace MapView {
 
@@ -21,7 +22,7 @@ namespace MapView {
 			mapView.AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
 			View.AddSubview(mapView);
 			
-			// create our location and zoom for los angeles
+			// create our location and zoom for Paris
 			var coords = new CLLocationCoordinate2D(48.857, 2.351); // paris
 			var span = new MKCoordinateSpan(MilesToLatitudeDegrees (2), MilesToLongitudeDegrees (2, coords.Latitude));
 
@@ -36,7 +37,11 @@ namespace MapView {
 			#region Not related to this sample
 			int typesWidth=260, typesHeight=30, distanceFromBottom=60;
 			mapTypes = new UISegmentedControl(new CGRect((View.Bounds.Width-typesWidth)/2, View.Bounds.Height-distanceFromBottom, typesWidth, typesHeight));
-			mapTypes.InsertSegment("Road", 0, false);
+            mapTypes.BackgroundColor = UIColor.White;
+            mapTypes.BackgroundColor = UIColor.White;
+            mapTypes.Layer.CornerRadius = 5;
+            mapTypes.ClipsToBounds = true;
+            mapTypes.InsertSegment("Road", 0, false);
 			mapTypes.InsertSegment("Satellite", 1, false);
 			mapTypes.InsertSegment("Hybrid", 2, false);
 			mapTypes.SelectedSegment = 0; // Road is the default
@@ -89,29 +94,38 @@ namespace MapView {
 			/// <summary>
 			/// The location of the annotation
 			/// </summary>
-			private CLLocationCoordinate2D coord;
-			protected string title;
-			protected string subtitle;
-			public override CLLocationCoordinate2D Coordinate { get { return coord; } }
+			CLLocationCoordinate2D coord;
+			string title, subtitle;
 
+			public override CLLocationCoordinate2D Coordinate 
+			{ 
+				get { return coord; } 
+			}
+			public override void SetCoordinate(CLLocationCoordinate2D value)
+			{
+				coord = value;
+			}
 
 			/// <summary>
 			/// The title text
 			/// </summary>
 			public override string Title
-			{ get { return title; } }
-			
+			{
+				get { return title; } 
+			}
 			
 			/// <summary>
 			/// The subtitle text
 			/// </summary>
 			public override string Subtitle
-			{ get { return subtitle; } }
+			{ 
+				get { return subtitle; } 
+			}
 			
 			public BasicMapAnnotation (CLLocationCoordinate2D coordinate, string title, string subTitle)
 				: base()
 			{
-				this.coord = coordinate;
+				coord = coordinate;
 				this.title = title;
 				this.subtitle = subTitle;
 			}
